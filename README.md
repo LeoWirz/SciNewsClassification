@@ -14,12 +14,12 @@ Build a classifier able to dissociate website's articles in three categories : n
 #### **The difference between a news article and a scientific one needs to be specified. Some websites are categorized like both by DMOZ of Wikipedia.**
 For now we will only consider that websites contained in the science category will be excluded from the news category. Later we should be able to use some features like the update rate, the presence of an author, the style of the page and the domain, etc...
 
-####**How many categories (field/domain) ?**
+#### **How many categories (field/domain) ?**
 computer science, nutrition, biologie, etc...
 
-####**Less websites and more articles for now**
+#### **Less websites and more articles for now**
 
-####**Spinn3r**
+#### **Spinn3r**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
 
 ## 2 Features extraction
