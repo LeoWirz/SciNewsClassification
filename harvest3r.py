@@ -13,8 +13,8 @@ import time
 import requests
 
 BASE_URL = 'http://epfl.elasticsearch.spinn3r.com'
-LOG_DIR = '/usr/local/var/log'
-DATA_DIR = '/Users/freened/dev/harvest3r'
+LOG_DIR = 'log'
+DATA_DIR = 'harvest3r'
 BULK_SIZE = 20
 
 HEADERS = {
@@ -79,7 +79,19 @@ class Harvester(object):
     for idx in all_indices:
       limits[idx] = dict()
 
-      if idx[:8] == 'content_':
+      if idx[:17] == 'content_retweets_':
+        year, month, day = map(int, (idx[20:24], idx[25:27], idx[28:30]))
+        limits[idx]['start'] = datetime(year, month, day)
+        limits[idx]['end'] = datetime(year, month, day)
+
+      elif idx[:24] == 'merged_content_retweets_':
+        year, month, day = map(int, (idx[27:31], idx[32:34], idx[35:37]))
+        limits[idx]['start'] = datetime(year, month, day)
+
+        year, month, day = map(int, (idx[41:45], idx[46:48], idx[49:51]))
+        limits[idx]['end'] = datetime(year, month, day)
+
+      elif idx[:8] == 'content_':
         year, month, day = map(int, (idx[8:12], idx[13:15], idx[16:18]))
         limits[idx]['start'] = datetime(year, month, day)
         limits[idx]['end'] = datetime(year, month, day)
@@ -90,6 +102,21 @@ class Harvester(object):
 
         year, month, day = map(int, (idx[29:33], idx[34:36], idx[37:39]))
         limits[idx]['end'] = datetime(year, month, day)
+
+      elif idx[:26] == 'twitter_top_users_content_':
+        year, month, day = map(int, (idx[26:30], idx[31:33], idx[34:36]))
+        limits[idx]['start'] = datetime(year, month, day)
+        limits[idx]['end'] = datetime(year, month, day)
+
+      elif idx[:33] == 'twitter_top_users_merged_content_':
+        year, month, day = map(int, (idx[33:37], idx[38:40], idx[41:43]))
+        limits[idx]['start'] = datetime(year, month, day)
+
+        year, month, day = map(int, (idx[47:51], idx[52:54], idx[55:57]))
+        limits[idx]['end'] = datetime(year, month, day)
+
+      else:
+        (print(idx))
 
     # Filter the indices that might contain our data
     related_indices = []
