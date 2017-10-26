@@ -307,7 +307,8 @@ class ArticleHarvester(Harvester):
     query = {
       "query" : {
          "bool": {
-            "filter": [
+          "filter": [
+            {"term": {"domain": "cnn.com"}},
 
             ],
             "should": [{"term": {"geo_country": "CH"}}],

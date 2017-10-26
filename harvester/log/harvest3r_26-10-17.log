@@ -1,0 +1,15 @@
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Querying indices: 
+INFO:root:Sending an initial query to http://epfl.elasticsearch.spinn3r.com/content_*/_search?scroll=1m
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Total records to fetch: 555, 10 already downloaded.
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Querying indices: 
+INFO:root:Sending an initial query to http://epfl.elasticsearch.spinn3r.com/content_*/_search?scroll=1m
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Total records to fetch: 261230507, 10 already downloaded.
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Querying indices: 
+INFO:root:Sending an initial query to http://epfl.elasticsearch.spinn3r.com/content_*/_search?scroll=1m
+INFO:requests.packages.urllib3.connectionpool:Starting new HTTP connection (1): epfl.elasticsearch.spinn3r.com
+INFO:root:Total records to fetch: 4816, 10 already downloaded.

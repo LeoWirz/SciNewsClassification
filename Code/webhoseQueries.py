@@ -13,7 +13,8 @@ def get_pages_into_json(domain, n=1):
     query_params = {
         "q": "language:english site:{}".format(domain),
         "ts": "1506420690566",
-        "sort": "crawled"
+        "sort": "crawled",
+        "format" : "excel"
     }
 
     output = webhoseio.query("filterWebContent", query_params)
