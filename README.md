@@ -16,14 +16,46 @@ For now we will only consider that websites contained in the science category wi
 
 #### **How many categories (field/domain) ?**
 computer science, nutrition, biologie, etc...
-The list of domains is manually copied from [Similarweb](https://www.similarweb.com/top-websites/category) because they use anti-scraping bots. what is interesting is that they use categories that we can use as labels for our classifier. The categories that we could use are health, news and media, science, and all their subcategories
+The list of domains is manually copied from [Similarweb](https://www.similarweb.com/top-websites/category) because they use anti-scraping bots. what is interesting is that they use categories that we can use as labels for our classifier. The categories that we could use are :
+- food & drink
+    - beverages
+    - catering
+    - cooking and recipes
+    - vegetarian and vegan
+- health
+    - addictions
+    - arternative and natural medicine
+    - dentistry
+    - heathcare industry
+    - nutrition
+- news and media
+    - business news
+    - college and university press 
+    - magazines and e zines
+    - newspapers
+    - sports news
+    - technology news
+    - weather
+- science
+    - agriculture
+    - astronomy
+    - biology
+    - chemistry 
+    - earth sciences
+    - educational resources
+    - engineering and technology
+    - environment
+    - instruments and supplies
+    - math
+    - physics
+    - social sciences
 
 They also have interesting features like average visit duration, pages per visit and bounce rates (percentage of visitor that leave after one page). 
 
 #### **Less websites and more articles for now**
 They are 50 sites per catergory and webhose gets 100 articles per query.
 
-#### **Spinn3r**
+#### **Spinn3r or webhose**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
 Spinn3r at EPFL only contains twitter post, webhose seems easier to use a gets clean data. We filter the queries by language (only english) and domain.
 
