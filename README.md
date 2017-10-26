@@ -16,11 +16,16 @@ For now we will only consider that websites contained in the science category wi
 
 #### **How many categories (field/domain) ?**
 computer science, nutrition, biologie, etc...
+The list of domains is manually copied from [Similarweb](https://www.similarweb.com/top-websites/category) because they use anti-scraping bots. what is interesting is that they use categories that we can use as labels for our classifier. The categories that we could use are health, news and media, science, and all their subcategories
+
+They also have interesting features like average visit duration, pages per visit and bounce rates (percentage of visitor that leave after one page). 
 
 #### **Less websites and more articles for now**
+They are 50 sites per catergory and webhose gets 100 articles per query.
 
 #### **Spinn3r**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
+Spinn3r at EPFL only contains twitter post, webhose seems easier to use a gets clean data. We filter the queries by language (only english) and domain.
 
 ## 2 Features extraction
 
