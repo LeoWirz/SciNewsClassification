@@ -63,15 +63,19 @@ Spinn3r at EPFL only contains twitter post, webhose seems easier to use a gets c
 
 #### **02.11.2017**
 We have 22 features/article :
+'''
 ['site', 'site_type', 'site_categories', 'domain_rank', 'country',
        'author', 'published', 'title', 'text', 'highlightText',
        'highlightTitle', 'language', 'rating', 'locations_pos',
        'locations_neu', 'locations_neg', 'organizations_pos',
        'organizations_neu', 'organizations_neg', 'persons_pos', 'persons_neu',
        'persons_neg']
+'''
 
 And for each domain, we have :
+'''
 ['rank', 'website', 'category','subcategory', 'change', 'avg_visit_duration',
        'pages/visit', 'bounce_rate']
+'''
 
 ## 3
