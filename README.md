@@ -53,12 +53,25 @@ The list of domains is manually copied from [Similarweb](https://www.similarweb.
 They also have interesting features like average visit duration, pages per visit and bounce rates (percentage of visitor that leave after one page). 
 
 #### **Less websites and more articles for now**
-They are 50 sites per catergory and webhose gets 100 articles per query.
+They are 50 sites per catergory and webhose gets 100 articles per query. To begin, we have ~450 websites and a maximum of 100 articles/website, which results in 12221 articles in total.
 
 #### **Spinn3r or webhose**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
 Spinn3r at EPFL only contains twitter post, webhose seems easier to use a gets clean data. We filter the queries by language (only english) and domain.
 
 ## 2 Features extraction
+
+#### **02.11.2017**
+We have 22 features/article :
+['site', 'site_type', 'site_categories', 'domain_rank', 'country',
+       'author', 'published', 'title', 'text', 'highlightText',
+       'highlightTitle', 'language', 'rating', 'locations_pos',
+       'locations_neu', 'locations_neg', 'organizations_pos',
+       'organizations_neu', 'organizations_neg', 'persons_pos', 'persons_neu',
+       'persons_neg']
+
+And for each domain, we have :
+['rank', 'website', 'category','subcategory', 'change', 'avg_visit_duration',
+       'pages/visit', 'bounce_rate']
 
 ## 3
