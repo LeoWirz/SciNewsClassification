@@ -53,7 +53,19 @@ The list of domains is manually copied from [Similarweb](https://www.similarweb.
 They also have interesting features like average visit duration, pages per visit and bounce rates (percentage of visitor that leave after one page). 
 
 #### **Less websites and more articles for now**
-They are 50 sites per catergory and webhose gets 100 articles per query. To begin, we have ~450 websites and a maximum of 100 articles/website, which results in 12221 articles in total.
+They are 50 sites per catergory and webhose gets 100 articles per query. To begin, we chose the following :
+- categories : 'Food and Drink', 'Health', 'News and Media', 'Science'. 
+- subcategories : 'Vegetarian and Vegan', 'Cooking and Recipes', None,
+       'Food and Grocery Retailers', 'Restaurants and Delivery',
+       'Nutrition', 'Conditions and Diseases', 'Child Health', 'Pharmacy',
+       'Products and Shopping', 'Education and Resources', 'Medicine',
+       'Mental Health', 'Healthcare Industry', 'Public Health and Safety',
+       'Newspapers', 'Technology News', 'Weather', 'Sports News',
+       'Magazines and E Zines', 'Biology', 'Environment',
+       'Educational Resources', 'Social Sciences', 'Chemistry', 'Math',
+       'Astronomy', 'Engineering and Technology', 'Agriculture',
+       'Earth Sciences', 'Physics'
+We have ~450 websites and a maximum of 100 articles/website, which results in 12221 articles in total.
 
 #### **Spinn3r or webhose**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
