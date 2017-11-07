@@ -65,11 +65,21 @@ They are 50 sites per catergory and webhose gets 100 articles per query. To begi
        'Educational Resources', 'Social Sciences', 'Chemistry', 'Math',
        'Astronomy', 'Engineering and Technology', 'Agriculture',
        'Earth Sciences', 'Physics'
+
 We have ~450 websites and a maximum of 100 articles/website, which results in 12221 articles in total.
+Then we filter by countries where the articles are mainly in english.
 
 #### **Spinn3r or webhose**
 Try to use an extraction software to get the articles. Spinn3r is not free, we will try Webhose.io which as a free section.
 Spinn3r at EPFL only contains twitter post, webhose seems easier to use a gets clean data. We filter the queries by language (only english) and domain.
+
+1st problem with webhose : we can only access articles over the last 30 days, therefore static pages (which are potentially more "scientific") can not be retrieved.
+- use spinn3r instead ?
+- pay for webhose ?
+- get them by myself ?
+
+#### **webhose archive data**
+Webhose have a free section of big article datasets. They are mainly news articles (more than 80%). We added the categories using SimilarSites. This dataset is in the order of 10 times bigger than the one we got by queriing. 
 
 ## 2 Features extraction
 
@@ -90,4 +100,24 @@ And for each domain, we have :
        'pages/visit', 'bounce_rate']
 ```
 
-## 3
+In order to build a classifier, we need numeric values. In this step, we want to derive numeric values from string features.
+- has_author boolean
+- number of images
+- presence of 'science' word in the title and/or domain
+
+
+## 3 Training
+
+#### **How many classes ?**
+The goal is to determine if an article is scientific or news, or something else, therefore we this would be 2 classes + 1 for the rest. 
+
+## 4 Validating
+
+We have 150'000 articles with no label that can be used for the validation. They are all about nutrition and health and should be classified as scientific of news.
+In order to get the label we can either :
+- sample it and label it manually
+- crowdsource
+
+Ideally, 90% of those articles should belong to one of the 2 classes in our classifier.
+
+Second step is to get random pages about other topics (sport, travel, entertainment, etc...), try our classifier on them and hopefully get 90% in the 'other' class.
