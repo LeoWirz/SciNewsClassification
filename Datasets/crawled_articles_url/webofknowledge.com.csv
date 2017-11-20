@@ -1,0 +1,22 @@
+base_url,url
+http://www.webofknowledge.com,http://wokinfo.com/
+http://www.webofknowledge.com,javascript:document.roaming.submit()
+http://www.webofknowledge.com,javascript: void(0)
+http://www.webofknowledge.com,http://wokinfo.com/terms
+http://www.webofknowledge.com,http://science.thomsonreuters.com/info/wokfeedback
+http://www.webofknowledge.com,http://clarivate.com
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=en_US
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=ko_KR
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=zh_TW
+http://www.webofknowledge.com,http://ip-science.thomsonreuters.com/techsupport/
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=ja
+http://www.webofknowledge.com,http://account.webofknowledge.com/enwservices/forgottenpassword/index.jsp?product=wok&locale=en_US
+http://www.webofknowledge.com,http://www.researcherid.com/
+http://www.webofknowledge.com,http://www.webofknowledge.com/
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=ru_RU
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=zh_CN
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=es_LA
+http://www.webofknowledge.com,http://login.webofknowledge.com/error/Error?Error=IPError&PathInfo=%2F&RouterURL=http%3A%2F%2Fwww.webofknowledge.com%2F&Domain=.webofknowledge.com&Src=IP&Alias=WOK5&locale=pt_BR
+http://www.webofknowledge.com,http://ip-science.thomsonreuters.com/privacy
+http://www.webofknowledge.com,javascript:shibbolethRedirect(document.forms[1].select);
+http://www.webofknowledge.com,http://wokinfo.com/about/productregistration/
