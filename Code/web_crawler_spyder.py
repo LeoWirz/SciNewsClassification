@@ -1,11 +1,13 @@
 import scrapy
 import csv
 from urllib.parse import urlparse
+from multiprocessing import Process, Queue
 
 # scrapy api
 from twisted.internet import reactor
 from scrapy.crawler import CrawlerProcess
 from scrapy.settings import Settings
+from scrapy.crawler import CrawlerRunner
 
 class WebSiteSpider(scrapy.Spider):
     url = ''
@@ -28,13 +30,14 @@ class WebSiteSpider(scrapy.Spider):
         start_links = [self.url + link if link.startswith('/') else link for link in links]
 
         max_links_number = min(len(end_links), int(self.limit))
+        print(max_links_number)
 
         filename = "../Datasets/crawled_articles_url/{}.csv".format(self.domain)
 
         with open(filename, "w", encoding='utf-8') as csv_file:
                 writer = csv.writer(csv_file, delimiter=',')
                 writer.writerow(["base_url","url"])
-                for link in start_links:
+                for link in start_links[:max_links_number]:
                     writer.writerow([self.url,link])
 
         next_page = response.css('a::attr(href)').extract_first()
@@ -52,4 +55,24 @@ def sends_spiders(list_, max_limit=-1):
     crawler = CrawlerProcess(settings)
     for l in list_:
         crawler.crawl(WebSiteSpider(), url=l, limit=max_limit)
-    crawler.start()
+    crawler.start(stop_after_crawl=False)
+
+def run_spider(list_, max_limit=-1):
+    q = Queue()
+    p = Process(target=f, args=(q,list_,max_limit,))
+    p.start()
+    result = q.get()
+    p.join()
+
+    if result is not None:
+        raise result
+
+def f(list_, max_limit=-1):
+    print(list_)
+    print(max_limit)
+    try:
+        runner = CrawlerRunner()
+        deferred = runner.crawl(WebSiteSpider(), url=list_, limit=max_limit)
+        deferred.addBoth(lambda _: reactor.stop())
+        reactor.run()
+    except Exception as e:

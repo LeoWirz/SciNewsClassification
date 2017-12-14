@@ -9,17 +9,16 @@ def get_pages_into_json(domain, n=1):
     domain = domain
     num_pages = n
 
-    webhoseio.config(token="1eee5ef1-4d51-497e-9e88-ed86353bcda9")
+    webhoseio.config(token="a64af0cc-bb64-44dd-a56d-d1d1e06b287e")
     query_params = {
-        "q": "language:english site:{}".format(domain),
-        "ts": "1507027919949",
-        "sort": "crawled",
-        "format" : "excel"
+    "q": "language:english",
+    "ts": "1512637551646",
+    "sort": "crawled"
     }
 
     output = webhoseio.query("filterWebContent", query_params)
 
-    newpath = file_path + '/{}'.format(domain)
+    newpath = file_path + '/{}'.format('20171214')
 
     if not os.path.exists(newpath):
         os.makedirs(newpath)

@@ -1,5 +1,6 @@
 import json, os, codecs, sys, glob, random
 import pandas as pd
+import progressbar
 
 def merge_into_dataframe(path):
 
@@ -71,38 +72,41 @@ def json_database_to_dataframe(path, sample_size=0, comment=''):
                             'participants_count', 'spam_score', 'site_type', 'published', 'replies_count', 'author', 'highlightText', 'language',
                             'text', 'webhose_category'])
 
-    for index, js in enumerate(json_files):
-        with open(os.path.join(path, js), encoding="utf8") as json_file:
-            json_text = json.load(json_file)
-            #print(json_text)
-            print(str(index) + "/" + str(len(json_files)))
-            
-            try:
-                site_full               = json_text['thread']['site_full']              if 'site_full' in json_text['thread'] else ''
-                site_section            = json_text['thread']['site_section']           if 'site_section' in json_text['thread'] else ''
-                section_title           = json_text['thread']['section_title']          if 'section_title' in json_text['thread'] else ''
-                url                     = json_text['thread']['url']                    if 'url' in json_text['thread'] else ''
-                country                 = json_text['thread']['country']                if 'country' in json_text['thread'] else ''
-                domain_rank             = json_text['thread']['domain_rank']            if 'domain_rank' in json_text['thread'] else ''
-                title                   = json_text['thread']['title']                  if 'title' in json_text['thread'] else ''
-                performance_score       = json_text['thread']['performance_score']      if 'performance_score' in json_text['thread'] else ''
-                site                    = json_text['thread']['site']                   if 'site' in json_text['thread'] else ''
-                participants_count      = json_text['thread']['participants_count']     if 'participants_count' in json_text['thread'] else ''
-                spam_score              = json_text['thread']['spam_score']             if 'spam_score' in json_text['thread'] else ''
-                site_type               = json_text['thread']['site_type']              if 'site_type' in json_text['thread'] else ''
-                published               = json_text['thread']['published']              if 'published' in json_text['thread'] else ''
-                replies_count           = json_text['thread']['replies_count']          if 'replies_count' in json_text['thread'] else ''
-                
-                author                  = json_text['author']
-                highlightText           = json_text['highlightText']
-                language                = json_text['language']
-                text                    = json_text['text']
-            except KeyError:
-                print('missing value')
+    with progressbar.ProgressBar(max_value=len(json_files)) as bar:       
+        for index, js in enumerate(json_files):
+            bar.update(index)
+            with open(os.path.join(path, js), encoding="utf8") as json_file:
+                json_text = json.load(json_file)
 
-            webhose_category            = comment
-            
-            jsons_data.loc[index] = [site_full, site_section, section_title, url, country, domain_rank, title, performance_score, site, 
-                                    participants_count, spam_score, site_type, published, replies_count, author, highlightText, language,
-                                    text, webhose_category]
+
+
+                
+                try:
+                    site_full               = json_text['thread']['site_full']              if 'site_full' in json_text['thread'] else ''
+                    site_section            = json_text['thread']['site_section']           if 'site_section' in json_text['thread'] else ''
+                    section_title           = json_text['thread']['section_title']          if 'section_title' in json_text['thread'] else ''
+                    url                     = json_text['thread']['url']                    if 'url' in json_text['thread'] else ''
+                    country                 = json_text['thread']['country']                if 'country' in json_text['thread'] else ''
+                    domain_rank             = json_text['thread']['domain_rank']            if 'domain_rank' in json_text['thread'] else ''
+                    title                   = json_text['thread']['title']                  if 'title' in json_text['thread'] else ''
+                    performance_score       = json_text['thread']['performance_score']      if 'performance_score' in json_text['thread'] else ''
+                    site                    = json_text['thread']['site']                   if 'site' in json_text['thread'] else ''
+                    participants_count      = json_text['thread']['participants_count']     if 'participants_count' in json_text['thread'] else ''
+                    spam_score              = json_text['thread']['spam_score']             if 'spam_score' in json_text['thread'] else ''
+                    site_type               = json_text['thread']['site_type']              if 'site_type' in json_text['thread'] else ''
+                    published               = json_text['thread']['published']              if 'published' in json_text['thread'] else ''
+                    replies_count           = json_text['thread']['replies_count']          if 'replies_count' in json_text['thread'] else ''
+                    
+                    author                  = json_text['author']
+                    highlightText           = json_text['highlightText']
+                    language                = json_text['language']
+                    text                    = json_text['text']
+                except KeyError:
+                    print('missing value')
+
+                webhose_category            = comment
+                
+                jsons_data.loc[index] = [site_full, site_section, section_title, url, country, domain_rank, title, performance_score, site, 
+                                        participants_count, spam_score, site_type, published, replies_count, author, highlightText, language,
+                                        text, webhose_category]
     return jsons_data
