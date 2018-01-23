@@ -52,7 +52,7 @@ def plot_tfidf_classfeats_h(dfs):
 
     font = {'family' : 'normal',
             'weight' : 'bold',
-            'size'   : 5}
+            'size'   : 10}
 
     plt.rc('font', **font)
 
@@ -65,7 +65,7 @@ def plot_tfidf_classfeats_h(dfs):
         ax.get_xaxis().tick_bottom()
         ax.get_yaxis().tick_left()
         ax.set_xlabel("Mean Tf-Idf Score", labelpad=16, fontsize=14)
-        ax.set_title(str(df.label), fontsize=3)
+        ax.set_title(str(df.label), fontsize=14)
         ax.ticklabel_format(axis='x', style='sci', scilimits=(-2, 2))
         ax.barh(x, df.tfidf, align='center', color='#3F5D7D')
         ax.set_yticks(x)
